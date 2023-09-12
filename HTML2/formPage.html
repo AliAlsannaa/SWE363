@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs offers</title>
+    <h1>candidate details</h1>
+</head>
+<body>
+    <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name"  autocomplete="given-name" placeholder="e.g. Ali Alsannaa" />
+        </div>
+        <div>
+          <label for="email">email</label>
+          <input type="email" name="email" id="email" autocomplete="email" placeholder="e.g. example@gmail.com" />
+        </div>
+        <div><label for="birth">Date of birth</label>
+          <input type="date" name="birth" id="birth" /></div>
+        <fieldset>
+            <legend>gender</legend>
+            <div>
+              <input type="radio" value="True" id="q25_radio1" name="q25" />
+              <label for="q25_radio1">male</label>
+            </div>
+            <div>
+              <input type="radio" value="False" id="q25_radio2" name="q25" />
+              <label for="q25_radio2">female</label>
+            </div>
+          </fieldset>
+        <div><label for="listbox1">Select a major:</label>
+            <select id="listbox1">
+              <option selected>Software engineering</option>
+              <option>computer science</option>
+              <option>computer engineering</option>
+              <option>cyper securty</option>
+              <option>finance</option>
+              <option>accounting</option>
+            </select></div>
+          <div><label for="university-choice">Enter your university name:</label>
+            <input list="university" id="university-choice" name="university-choice" autocomplete="organization" placeholder="e.g. King Saud university"/>
+            
+            <datalist id="university">
+              <option value="King Fahed university for petroleum and minerlas"></option>
+              <option value="King Saud university"></option>
+              <option value="Imam abdurahman university"></option>
+              <option value="Harvard"></option>
+              <option value="Stanford"></option>
+            </datalist></div>
+          <a href="submission.html">Submit</a>
+          
+</body>
+</html>
