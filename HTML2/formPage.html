@@ -8,28 +8,34 @@
 </head>
 <body>
     <form action="" method="get" class="form-example">
-        <div class="form-example">
+        <fieldset class="form-example">
+          <legend>Name</legend>
           <label for="name">Enter your name: </label>
           <input type="text" name="name" id="name"  autocomplete="given-name" placeholder="e.g. Ali Alsannaa" />
-        </div>
-        <div>
-          <label for="email">email</label>
-          <input type="email" name="email" id="email" autocomplete="email" placeholder="e.g. example@gmail.com" />
-        </div>
-        <div><label for="birth">Date of birth</label>
-          <input type="date" name="birth" id="birth" /></div>
+        </fieldset>
         <fieldset>
-            <legend>gender</legend>
-            <div>
+          <legend>Email</legend>
+          <label for="email">Enter your email: </label>
+          <input type="email" name="email" id="email" autocomplete="email" placeholder="e.g. example@gmail.com" />
+        </fieldset>
+        <fieldset>
+          <legend>Date of birth</legend>
+          <label for="birth">Select a date: </label>
+          <input type="date" name="birth" id="birth" /></fieldset>
+        <fieldset>
+            <legend>Gender</legend>
+            <section>
               <input type="radio" value="True" id="q25_radio1" name="q25" />
-              <label for="q25_radio1">male</label>
-            </div>
-            <div>
+              <label for="q25_radio1">Male</label>
+            </section>
+            <section>
               <input type="radio" value="False" id="q25_radio2" name="q25" />
-              <label for="q25_radio2">female</label>
-            </div>
+              <label for="q25_radio2">Female</label>
+            </section>
           </fieldset>
-        <div><label for="listbox1">Select a major:</label>
+        <fieldset>
+          <legend>Major</legend>
+          <label for="listbox1">Select a major: </label>
             <select id="listbox1">
               <option selected>Software engineering</option>
               <option>computer science</option>
@@ -37,8 +43,10 @@
               <option>cyper securty</option>
               <option>finance</option>
               <option>accounting</option>
-            </select></div>
-          <div><label for="university-choice">Enter your university name:</label>
+            </select></fieldset>
+          <fieldset>
+            <legend>University</legend>
+            <label for="university-choice">Enter your university name: </label>
             <input list="university" id="university-choice" name="university-choice" autocomplete="organization" placeholder="e.g. King Saud university"/>
             
             <datalist id="university">
@@ -47,8 +55,10 @@
               <option value="Imam abdurahman university"></option>
               <option value="Harvard"></option>
               <option value="Stanford"></option>
-            </datalist></div>
+            </datalist></fieldset>
+          <div>
           <a href="submission.html">Submit</a>
+          </div>
           
 </body>
 </html>
