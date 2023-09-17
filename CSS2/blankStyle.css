@@ -1,0 +1,44 @@
+nav li{
+    display: inline;
+    margin: 0px 4px;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul{
+    padding-left: 8px;
+}
+th {
+    text-transform:uppercase;
+}
+
+.top {
+    background-color:#ff4b01;
+  }
+
+  em {
+    color:blue;
+  }
+
+  #the_most_important {
+    text-transform:uppercase;
+    color: gold;
+  }
+  
+
+a {
+    color: green;
+}
+
+header{
+    background-color: darkgreen;
+    padding: 4px;
+    color: aliceblue;
+}
+
+nav li :first-child a{
+ color: #000;
+ text-decoration: underline;    
+}
