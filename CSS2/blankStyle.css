@@ -42,3 +42,44 @@ nav li :first-child a{
  color: #000;
  text-decoration: underline;    
 }
+
+h2 {
+    font-family: sans-serif;
+}
+
+h1,h2,h3 {
+    text-transform:capitalize;
+  }
+
+  tbody tr:hover, tbody tr:hover td{
+    background-color:#505150;
+  }
+
+  h2+p:first-letter {
+    font-size:x-large;
+  }
+
+
+  tbody tr:nth-child(odd){
+    background-color: #fbcf61;
+  }
+
+  ::selection {
+    background-color: #fbff00;
+  }
+
+  a:hover {
+    cursor:pointer;
+  }
+
+  input {
+    height:20px;
+  }
+
+  input:not([type="text"]){
+    border: lightgray;
+  }
+
+  input[name="message"]{
+    height:50px;
+  }
