@@ -33,11 +33,11 @@ h1 article {
 
 }
 nav img {
-    width: 80x;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 nav a{
-    color: #707070;
+    color:#14213D;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
 }
@@ -99,4 +99,21 @@ h3 a {
 h3[dir= "rtl"] {
 padding-right: 100px;
 }
+
+a:hover {
+    color: aqua;
+    transition: color 0.4s;
+}
+
+section:hover a{
+color: #707070;
+transition: color 0.3s;
+}
+
+ section:nth-child(0) a {
+transition-delay: 0.2s;
+}
+ section:nth-child(1) a {
+    transition-delay: 0.4s;
+    }
 
