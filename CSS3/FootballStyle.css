@@ -45,6 +45,19 @@ nav aside {
     padding-left: 18px; 
     padding-right: 20px;
 }
+main {
+    visibility: visible;
+animation: visiblility 2s;
+}
+
+@keyframes visiblility {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility:hidden;
+    }
+}
 
 body {
     width: 700px;
@@ -116,4 +129,32 @@ transition-delay: 0.2s;
  section:nth-child(1) a {
     transition-delay: 0.4s;
     }
+
+    .load {
+        border: 32px solid white;
+        border-top: 32px solid blueviolet; 
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        visibility: hidden;
+        animation: spin 2s linear;
+    } 
+
+    @keyframes spin {
+        0% {
+            visibility: visible;
+             transform: rotate(0deg); 
+            }
+        25% {
+            transform: rotate(360deg); 
+        }
+        75% {
+            transform: rotate(0deg); 
+        }
+        100% {
+            visibility: visible;
+             transform: rotate(360deg); 
+            }
+    }
+
 
