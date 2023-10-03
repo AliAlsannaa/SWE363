@@ -130,6 +130,8 @@
             }
 
             function resetButton() {
+                turn = "X"
+                gameEnded = false
                 for(var i=0; i<row1c.length; i++){
                     row1c[i].innerText = ""
                     row1c[i].style.backgroundColor = 'beige'
@@ -137,7 +139,7 @@
                     row2c[i].style.backgroundColor = 'beige'
                     row3c[i].innerText = ""
                     row3c[i].style.backgroundColor = 'beige'
-                    
+                    document.getElementById("turn").innerText = "Now it is" + turn + " turn"
                 }
             
             }
