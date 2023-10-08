@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="football statices">
+    <meta name="keywords" content="football, players, socre, goals, assits">
+    <meta name="author" content="Ali Alsannaa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>football players statices</title>
+    <link rel="stylesheet" href="FootballStyle.css">
+    <link rel="stylesheet" href="FootballStyle-Desktop.css" media="screen and (min-width: 728px)">
+
+</head>
+<body>
+    <main>
+    <h1>
+        <article>
+            <p>players Statistics</p>
+            <h3>
+                <a href="mainPage-ar.html">Arabic</a>
+            </h3>
+        </article>
+        <nav>
+            <aside>
+                <img src="logo.png" alt="">
+            </aside>
+            <section>
+                <a href="mainPage.html">main</a>
+                <a href="contactUs.html">contact us</a>
+                <img src="pngegg.png" alt="">
+            </section>
+            </nav>
+    </h1>
+<h2>
+</h2>
+</main>
+<footer>
+    <a href="contactUs.html">contact us</a>
+</footer>
+<script>
+    pages = [
+        {   
+            image: "soccer.jpg",
+            src: "playerStat.html",
+            title: "players Statistics",
+            date: "2023 Oct 01"
+        },
+
+        {   
+            image: "mbsleauge.jpeg",
+            src: "mbsStat.html",
+            title: "mbs Statistics",
+            date: "2023 Oct 07"
+        },
+
+        {   
+            image: "hand-drawing-a-game-of-tic-tac-toe-with-colored-crayons-960x640.jpg.webp",
+            src: "mini-game.html",
+            title: "Play XO game",
+            date: "2023 Oct 07"
+        }
+    ]
+
+    let articles = ``
+    for(page of pages) {
+        element = 
+        `<div class= "article">
+            <div class="watermark">
+                <p>Ali</p>
+            </div>
+            <img src="${page.image}" height="800" width="1440px" alt="">
+            <a href="${page.src}">${page.title}</a>
+            <div class="date">
+                <p>${page.date}</p>
+            </div>
+        </div>
+
+        `
+        articles += element
+    }
+
+    document.querySelector("h2").innerHTML = articles
+
+</script>
+</body>
+</html>

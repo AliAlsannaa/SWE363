@@ -28,6 +28,20 @@
             align-items: center;
         }
 
+        .hovered {
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: blanchedalmond;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .cell:hover {
             background-color: blanchedalmond;
         }
@@ -39,6 +53,27 @@
         h2 {
             color: orangered;
         }
+
+        .main {
+            display: inline;
+        }
+
+        aside {
+            display: block;
+            font-size: larger;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        aside p {
+            color: white;
+        }
+
+        aside:hover p {
+            color: black;
+            transition: color 0.4s;
+        }
     </style>
 </head>
 
@@ -47,6 +82,15 @@
         Now it's is <span>X</span> turn
     </h1>
     <!-- Board -->
+    <div class="main">
+        <aside><h3>How to play by keyboard?</h3>
+            <p>Click w to move up</p>
+            <p>Click a to move left</p>
+            <p>Click s to move down</p>
+            <p>Click d to move right</p>
+            <p>Click enter to select cell</p>
+            <p>Click r to restart game</p>
+        </aside>
     <div class="board">
         <div class="row">
             <div class="cell"></div>
@@ -64,11 +108,14 @@
             <div class="cell"></div>
         </div>
         <h2 class="reset">reset</h2>
+        </div>
         <script>
 
             // decided which turn is it
             let turn = "X"
             let gameEnded = false
+            let i = 1
+            let j = 1
 
             // when we click on a cell add the letter 
             let board = document.getElementsByClassName("board")[0]          
@@ -78,14 +125,20 @@
             var row2c =row2.children
             var row3 = document.getElementsByClassName("row")[2]
             var row3c =row3.children
-            board.addEventListener("click", cellClicked)
+            keyCell = row2c[1]
+            board.addEventListener("click", mouseClick)
+            document.addEventListener("keydown", keyboardControl)
             const reset = document.querySelector("h2")
             reset.addEventListener("click", resetButton)
 
-            function cellClicked(event) {
+            function mouseClick(event) {
                 let cell = event.target
-                while(cell.innerText != "") {
-                    cellClicked(event)
+                cellClicked(cell)
+            }
+
+            function cellClicked(cell) {
+                while(cell.innerText !== "") {
+                    cellClicked(cell)
                 }
                 cell.innerText = turn
                 if (turn === "X") {
@@ -107,10 +160,16 @@
                     gameEnded =true
                 }
 
+                let draw = true
+
                 for(var i=0; i<row1c.length; i++){
                     if(row1c[i].innerText ==="" || row2c[i].innerText ==="" || row3c[i].innerText ==="") {
+                        draw = false
                         break
                     }
+                }
+
+                if(draw) {
                     turn = ""
                     document.getElementById("turn").innerText = "Draw!"
                 }
@@ -142,6 +201,51 @@
                     document.getElementById("turn").innerText = "Now it is" + turn + " turn"
                 }
             
+            }
+
+            function keyboardControl(event) {
+                let key = event.key
+                brd = [row1c, row2c, row3c]
+                if(key === "w" && i !== 0) {
+                    keyCell.className = "cell"
+                    i-=1
+                    let row = brd[i]
+                    keyCell = row[j]
+                    keyCell.className = "hovered"
+                }
+
+                if(key === "s" && i !== 2) {
+                    keyCell.className = "cell"
+                    i+=1
+                    let row = brd[i]
+                    keyCell = row[j]
+                    keyCell.className = "hovered"
+                }
+
+                if(key === "a" && j !== 0) {
+                    keyCell.className = "cell"
+                    j-=1
+                    let row = brd[i]
+                    keyCell = row[j]
+                    keyCell.className = "hovered"
+                }
+
+                if(key === "d" && j !== 2) {
+                    keyCell.className = "cell"
+                    j+=1
+                    let row = brd[i]
+                    keyCell = row[j]
+                    keyCell.className = "hovered"
+                }
+
+                if(event.keyCode === 13) {
+                    cellClicked(keyCell)
+                }
+
+                if(key === "r") {
+                    resetButton()
+                }
+
             }
         </script>
     </div>
