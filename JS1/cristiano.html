@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="playerStyle.css">
+</head>
+<body>
+    <h1>
+        <article>
+            <p>players Statistics</p>
+            <h3>
+                <a href="mainPage-ar.html">Arabic</a>
+            </h3>
+        </article>
+        <nav>
+            <aside>
+                <img src="logo.png" alt="">
+            </aside>
+            <section>
+                <a href="mainPage.html">main</a>
+                <a href="contactUs.html">contact us</a>
+                <img src="pngegg.png" alt="">
+            </section>
+        </nav>
+    </h1>
+    <div class="data">
+        <div class="league">
+            <img class = "image" src="" alt="">
+            <div class="player"></div>
+            <div class="birth"></div>
+            <div class="nation"></div>
+            <div class="club"></div>
+            <div class="description"></div>
+        </div>
+    </div>
+    <footer>
+        <a href="contactUs.html">contact us</a>
+    </footer>
+    <script>
+        async function addimg(img) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            img.src = (pl[0]).strThumb
+        }
+
+        async function addname(plyr) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            plyr.innerText = (pl[0]).strPlayer
+        }
+
+        async function addbirth(birth) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            birth.innerText = (pl[0]).dateBorn
+        }
+
+        async function addnation(nation) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            nation.innerText = (pl[0]).strNationality
+        }
+
+        async function addclub(club) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            club.innerText = (pl[0]).strTeam
+        }
+
+        async function addDescription(description) {
+            res = await fetch("https://www.thesportsdb.com/api/v1/json/3/searchplayers.php?p=Cristiano%20Ronaldo")
+            data = await res.json()
+            pl = data.player
+            description.innerText = (pl[0]).strDescriptionEN
+        }
+
+        const img = document.getElementsByClassName("image")[0]
+        addimg(img)
+        const plyr = document.getElementsByClassName("player")[0]
+        addname(plyr)
+        const birth = document.getElementsByClassName("birth")[0]
+        addbirth(birth)
+        const nation = document.getElementsByClassName("nation")[0]
+        addnation(nation)
+        const club = document.getElementsByClassName("club")[0]
+        addclub(club)
+        const description = document.getElementsByClassName("description")[0]
+        addDescription(description)
+
+        /*const txt = document.getElementsByClassName("title")[0]
+        addLeague(txt)*/
+    </script>
+</body>
+</html>
