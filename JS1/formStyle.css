@@ -1,0 +1,173 @@
+h1 {
+    width: 1440px;
+    height: 120px;
+    color: #707070;
+    background-color: black;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    display: block;
+    justify-content: center; 
+    align-items: center;
+    margin: 0px;
+}
+nav {
+    width: 1440px;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    background-color: #14213D;
+
+}
+nav section{
+    background-color: #14213D;
+    margin-left: 29px; 
+    margin-right: 28px;
+}
+
+h1 article {
+    width: 1440;
+    height: 40;
+    justify-content: center;
+
+}
+
+h3 a {
+    color: #707070;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif; 
+    justify-self: end;
+}
+nav img {
+    width: 60px;
+    height: 60px;
+    
+}
+nav a{
+    color:#14213D;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+nav aside {
+    margin-left: 29px; 
+    margin-right: 28px;
+}
+
+a:hover {
+    color: aqua;
+    transition: color 0.4s;
+}
+
+section:hover a{
+color: #707070;
+transition: color 0.3s;
+}
+
+ section:nth-child(0) a {
+transition-delay: 0.2s;
+}
+ section:nth-child(1) a {
+    transition-delay: 0.4s;
+    }
+
+
+body {
+    display: block;
+    width: 1440px; 
+    background: #707070;
+}
+
+form {
+    margin-top: 65px;
+}
+
+fieldset {
+    margin-top: 25px;
+}
+
+legend {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color:lightblue;
+}
+
+label {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color:white;
+}
+
+input {
+    width: 200px;
+}
+
+input[type="color"] {
+    width: 30px;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    width: 30px;
+}
+
+.sign {
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.toolbar {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+button {
+    border-radius: 3px;
+    color:cornflowerblue;
+    border-width: 0.3px;
+}
+
+.submit{
+    width: 1540px;
+    height: 50px;
+    position: fixed;
+    background-color: #707070;
+    left: 0;
+    bottom: 0;
+}
+
+.submit a {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color:lightblue;
+    margin-left: 1350px;
+    margin-top: 20px;
+}
+
+.submit a:hover {
+    color: aqua;
+    transition: color 0.4s;
+}
+
+footer {
+    position: absolute;
+    background-color: #14213D;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 1440px;
+    height: 80px;
+    margin-bottom: 0px;
+    padding-right: 20px;
+
+}
+
+footer a {
+    color: #707070;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif; 
+}

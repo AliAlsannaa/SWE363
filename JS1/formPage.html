@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs offers</title>
+    <link rel="stylesheet" href="formStyle.css">
+</head>
+<body>
+  <h1>
+    <article>
+        <p>candidate details</p>
+        <h3>
+            <a href="mainPage-ar.html">Arabic</a>
+        </h3>
+    </article>
+    <nav>
+        <aside>
+            <img src="logo.png" alt="">
+        </aside>
+        <section>
+            <a href="mainPage.html">main</a>
+            <a href="contactUs.html">contact us</a>
+            <img src="pngegg.png" alt="">
+        </section>
+    </nav>
+</h1>
+    <form action="" method="get" class="form-example">
+        <fieldset class="form-example">
+          <legend>Name</legend>
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name"  autocomplete="given-name" placeholder="e.g. Ali Alsannaa" />
+        </fieldset>
+        <fieldset>
+          <legend>Email</legend>
+          <label for="email">Enter your email: </label>
+          <input type="email" name="email" id="email" autocomplete="email" placeholder="e.g. example@gmail.com" />
+        </fieldset>
+        <fieldset>
+          <legend>Date of birth</legend>
+          <label for="birth">Select a date: </label>
+          <input type="date" name="birth" id="birth" /></fieldset>
+        <fieldset>
+            <legend>Gender</legend>
+            <section>
+              <input type="radio" value="True" id="q25_radio1" name="q25" />
+              <label for="q25_radio1">Male</label>
+            </section>
+            <section>
+              <input type="radio" value="False" id="q25_radio2" name="q25" />
+              <label for="q25_radio2">Female</label>
+            </section>
+          </fieldset>
+        <fieldset>
+          <legend>Major</legend>
+          <label for="listbox1">Select a major: </label>
+            <select id="listbox1">
+              <option selected>Software engineering</option>
+              <option>computer science</option>
+              <option>computer engineering</option>
+              <option>cyper securty</option>
+              <option>finance</option>
+              <option>accounting</option>
+            </select></fieldset>
+          <fieldset>
+            <legend>University</legend>
+            <label for="university-choice">Enter your university name: </label>
+            <input list="university" id="university-choice" name="university-choice" autocomplete="organization" placeholder="e.g. King Saud university"/>
+            
+            <datalist id="university">
+              <option value="King Fahed university for petroleum and minerlas"></option>
+              <option value="King Saud university"></option>
+              <option value="Imam abdurahman university"></option>
+              <option value="Harvard"></option>
+              <option value="Stanford"></option>
+            </datalist></fieldset>
+            <div  class="sign">
+              <legend>Sign</legend>
+              <div class="toolbar">
+                <input type="color" aria-label="select color" value="#000000">
+                <input type="range" min="0.5" max="10" value="5" aria-label="select pen size"><span class="output">5</span>
+                <button>Clear</button>
+            </div>
+        
+            <canvas class="signCanvas">
+                <p>Add suitable fallback here.</p>
+            </canvas>
+            </div>
+          <div class="submit">
+            <a href="Submit.html">Submit</a>
+          </div>
+          <footer>
+            <address>
+                <legend>Contact us</legend>
+                <a href="mail:s202015980@kfupm.edu.com">s202015980@kfupm.edu.com</a><br />
+                <a href="tel:+966560084162">0560084162</a>
+              </address>
+            <section>
+                <legend>Copyright</legend>
+                <p>2023 FootballStat</p>
+              </section>
+              <section>
+                <legend>Links</legend>
+                <a href="mainPage.html"> Main page</a>
+              </section>
+        </footer>
+        <script>
+           const canvas = document.querySelector('.signCanvas');
+          const width = canvas.width = 300;
+          const height = canvas.height = 300;
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = 'rgb(255,255,255)';
+          ctx.fillRect(0, 0, width, height);
+
+          const colorPicker = document.querySelector('input[type="color"]');
+          const sizePicker = document.querySelector('input[type="range"]');
+          const output = document.querySelector('.output');
+          const clearBtn = document.querySelector('button');
+
+          function degToRad(degrees) {
+            return degrees * Math.PI / 180;
+          };
+
+          sizePicker.addEventListener('input', () => output.textContent = sizePicker.value);
+
+          let curX;
+          let curY;
+          let pressed = false;
+
+          document.addEventListener('mousemove', e => {
+            curX = e.clientX
+            curY = e.clientY 
+          });
+
+          canvas.addEventListener('mousedown', () => pressed = true);
+          canvas.addEventListener('mouseup', () => pressed = false);
+          clearBtn.addEventListener('click', () => {
+              ctx.fillStyle = 'rgb(255,255,255)';
+              ctx.fillRect(0, 0, width, height);
+          });
+
+          //let size = 10
+
+          function draw() {
+              ctx.fillStyle = colorPicker.value;
+              
+              if (pressed){
+                  ctx.beginPath();
+                  ctx.arc(curX-15, curY-360, sizePicker.value, degToRad(0), degToRad(360), false);
+                  ctx.fill();
+              }
+
+              requestAnimationFrame(draw);
+          }
+
+          draw();
+
+        </script>
+          
+</body>
+</html>
