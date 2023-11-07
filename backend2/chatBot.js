@@ -10,6 +10,7 @@ const respones = {
   'how are you': 'I am good, thanks for asking!',
   'bye': 'Goodbye! Have a great day!',
   'what is this course': 'This course is SWE363',
+  
 };
 
 function chatbotResponse(input) {
@@ -29,7 +30,7 @@ function startChat() {
       const response = chatbotResponse(input);
       console.log(`Chatbot: ${response}\n`);
       startChat();
-      
+
     }
   });
 }
