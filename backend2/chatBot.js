@@ -29,6 +29,7 @@ function startChat() {
       const response = chatbotResponse(input);
       console.log(`Chatbot: ${response}\n`);
       startChat();
+      
     }
   });
 }
